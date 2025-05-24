@@ -22,6 +22,62 @@
     <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'> -->
     <script type="text/javascript" src="js/modernizr.custom.js"></script>
 
+    <!-- Add Font Awesome for GitHub icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .author-link {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .author-link:hover .author-name {
+            text-decoration: underline;
+        }
+        .author-link .author-name {
+            display: inline-block;
+        }
+        
+        /* GitHub button styling */
+        .github-btn, .paper-btn {
+            display: inline-block;
+            margin: 10px 5px 15px;
+            padding: 12px 24px;
+            background-color: #24292e;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .github-btn:hover, .paper-btn:hover {
+            background-color: #2b3137;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .paper-btn {
+            background-color: #4285F4;
+        }
+        
+        .paper-btn:hover {
+            background-color: #5294FF;
+        }
+        
+        .github-btn i, .paper-btn i {
+            margin-right: 10px;
+        }
+        
+        .github-container {
+            text-align: center;
+            margin-bottom: 0px;
+        }
+    </style>
+
 </head>
 
 
@@ -31,23 +87,52 @@
 
     <div class="section-title text-center center">
         <h1 style="color:black"><strong><br><br> ReSound: Speech Reconstruction from Silent Videos <br> via Acoustic-Semantic Decomposed Modeling</b><strong></h1>
+        <!-- <h3 style="color:black"><strong><br><br> Interspeech 2025</b><strong></h3> -->
+
+        <div class="authors" style="margin-top: 20px; margin-bottom: 10px;">
+            <span style="font-size: 18px; color: #333;">
+                <a href="https://orcid.org/0009-0004-6197-3428" class="author-link"><span class="author-name">Long-Khanh Pham</span><sup>1</sup></a> &nbsp;&nbsp;
+                <a href="https://scholar.google.com/citations?user=0TvnzDYAAAAJ&hl=en" class="author-link"><span class="author-name">Thanh V. T. Tran</span><sup>1</sup></a> &nbsp;&nbsp;
+                <a href="https://scholar.google.fr/citations?user=mnNKKlAAAAAJ&hl=en" class="author-link"><span class="author-name">Minh-Tan Pham</span><sup>1,2</sup></a> &nbsp;&nbsp;
+                <a href="https://scholar.google.com/citations?user=rJe1704AAAAJ" class="author-link"><span class="author-name">Van Nguyen</span><sup>1</sup></a>
+            </span>
+        </div>
+        
+        <div class="affiliations" style="margin-bottom: 30px;">
+            <span style="font-size: 16px; color: #555;">
+                <sup>1</sup>FPT Software AI Center, Vietnam &nbsp;&nbsp;
+                <sup>2</sup>IRISA, Université Bretagne Sud, France
+            </span>
+        </div>
+        
+        <!-- Buttons Container -->
+        <div class="github-container">
+            <a href="https://github.com/FSoft-AIC/RESOUND" class="github-btn" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="#" class="paper-btn" target="_blank">
+                <i class="fas fa-file-alt"></i> Paper (TBA)
+            </a>
+        </div>
     </div>
+
+    <div class="row">
+        
+        <div class="col-md-10 col-md-offset-1">
+            <p style="color:black; font-family:Sans-Serif; font-size:24px; text-align:center;"> Abstract </p>
+
+            <p style="color:black; font-family:Sans-Serif; font-size:16px">                         
+                Lip-to-Speech (L2S) synthesis task, which reconstructs speech from visual cues, faces challenges in accuracy and naturalness due to limited supervision in capturing linguistic content, accents, and prosody. In this paper, we propose RESOUND, a novel L2S framework that generates intelligible and expressive speech from silent talking face videos. Leveraging source-filter theory, RESOUND splits into two pathways: an acoustic path for predicting prosody and a semantic path for extracting linguistic features. This separation simplifies learning, allowing independent optimization of each representation. Additionally, we enhance performance by integrating speech units, a proven unsupervised speech representation technique, into waveform generation alongside mel-spectrograms. This structure allows RESOUND to synthesize high-accuracy prosodic speech while preserving content and speaker identity. Experiments show that RESOUND outperforms prior state-of-the-art L2S methods across multiple metrics.
+            </p><br><br>
+    
+        </div>
+    </div>
+
+    <p style="color:black; font-family:Sans-Serif; font-size:24px; text-align:center;"> Model Architecture </p>
 
     <div class="portfolio-item"> 
         <img style="border:0px solid black;" src="img/method.png" class="img-responsive" alt="method"><br><br>
     </div> 
-
-    <div class="row">
-      
-          <div class="col-md-10 col-md-offset-1">
-                <p style="color:black; font-family:Sans-Serif; font-size:24px; text-align:center;"> Abstract </p>
-
-                <p style="color:black; font-family:Sans-Serif; font-size:16px">                         
-                    Lip-to-Speech (L2S) synthesis task, which reconstructs speech from visual cues, faces challenges in accuracy and naturalness due to limited supervision in capturing linguistic content, accents, and prosody. In this paper, we propose RESOUND, a novel L2S framework that generates intelligible and expressive speech from silent talking face videos. Leveraging source-filter theory, RESOUND splits into two pathways: an acoustic path for predicting prosody and a semantic path for extracting linguistic features. This separation simplifies learning, allowing independent optimization of each representation. Additionally, we enhance performance by integrating speech units, a proven unsupervised speech representation technique, into waveform generation alongside mel-spectrograms. This structure allows RESOUND to synthesize high-accuracy prosodic speech while preserving content and speaker identity. Experiments show that RESOUND outperforms prior state-of-the-art L2S methods across multiple metrics.
-                </p> <br><hr><br>
-      
-          </div>
-    </div>
 
   </div>
 <!-- </div> -->
@@ -61,7 +146,7 @@
       <!-- <div class="col-md-20 col-md-offset--100"> -->
     
     <p style="color:black; font-family:Sans-Serif; font-size:24px;"> Samples from LRS3 Dataset </p>
-    <br><br>
+    <br>
 
     <div style="width:1620px; margin:0 auto;">
 
